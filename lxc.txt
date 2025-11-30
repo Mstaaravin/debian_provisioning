@@ -1,3 +1,4 @@
+apt update
 sed -i 's/^# *en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen && update-locale LANG=en_US.UTF-8
 sed -i 's/^#force_color_prompt=yes/force_color_prompt=yes/' /etc/skel/.bashrc
 sed -i 's/\\\[\\033\[01;32m\\\]/\\\[\\033[01;33m\\\]/' /etc/skel/.bashrc
@@ -8,3 +9,4 @@ timedatectl set-timezone America/Argentina/Buenos_Aires
 timedatectl
 echo "cmiranda ALL=NOPASSWD: ALL" > /etc/sudoers.d/cmiranda
 systemctl disable postfix
+apt dist-upgrade -y
